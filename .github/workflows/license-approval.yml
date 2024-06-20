@@ -23,7 +23,7 @@ jobs:
 
     - name: Check licenses
       shell: sh
-      run: license_finder --enabled-package-managers=npm report --format html > license_report.html
+      run: license_finder --enabled-package-managers=npm
 
     - name: Archive license report
       uses: actions/upload-artifact@v4
