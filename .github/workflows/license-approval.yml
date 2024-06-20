@@ -1,26 +1,32 @@
-on:
-  push:
-    branches:
-    - main
-  pull_request:
-    branches:
-    - main
-  workflow_dispatch:
+name: License Approval
+
+on: [push, pull_request]
   
 jobs:
-  license_check_npm:
+  check-licenses:
     runs-on: ubuntu-latest
-    name: Check for unapproved licenses
     steps:
-
-    # Checkout and install your dependencies first
     - name: Checkout the code
       uses: actions/checkout@v4
+
     - name: Install
-      working-directory: "."
       run: npm install
 
-    - uses: ralexander-phi/license_approval@master
+    - name: Install ruby
+      uses: ruby/setup-ruby@v1
       with:
-        working_directory: "."
-        extra_flags: --enabled-package-managers=npm
+        ruby-version: ruby-3.2
+
+    - name: Install license_finder
+      shell: sh
+      run: gem install license_finder --version 7.1.0
+
+    - name: Check licenses
+      shell: sh
+      run: license_finder --enabled-package-managers=npm --format=html > license_report.html
+
+    - name: Archive license report
+      uses: actions/upload-artifact@v2
+      with:
+        name: license-report
+        path: license_report.html
