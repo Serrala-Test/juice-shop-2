@@ -5,3 +5,27 @@
     :why: 
     :versions: []
     :when: 2024-06-20 08:32:35.440202000 Z
+- - :permit
+  - Apache 2.0
+  - :who: 
+    :why: 
+    :versions: []
+    :when: 2024-06-20 09:22:03.275824000 Z
+- - :permit
+  - ISC
+  - :who: 
+    :why: 
+    :versions: []
+    :when: 2024-06-20 09:22:20.382966000 Z
+- - :permit
+  - New BSD
+  - :who: 
+    :why: 
+    :versions: []
+    :when: 2024-06-20 09:23:01.585426000 Z
+- - :permit
+  - Simplified BSD
+  - :who: 
+    :why: 
+    :versions: []
+    :when: 2024-06-20 09:23:07.172123000 Z
