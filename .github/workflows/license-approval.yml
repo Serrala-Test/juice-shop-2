@@ -17,10 +17,10 @@ jobs:
     - name: Checkout the code
       uses: actions/checkout@v4
     - name: Install
-      working-directory: examples/npm
+      working-directory: "."
       run: npm install
 
     - uses: ralexander-phi/license_approval@master
       with:
-        working_directory: examples/npm
+        working_directory: "."
         extra_flags: --enabled-package-managers=npm
