@@ -26,7 +26,7 @@ jobs:
       run: license_finder --enabled-package-managers=npm --format=html > license_report.html
 
     - name: Archive license report
-      uses: actions/upload-artifact@v2
+      uses: actions/upload-artifact@v4
       with:
         name: license-report
         path: license_report.html
