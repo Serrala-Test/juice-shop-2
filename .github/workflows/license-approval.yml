@@ -19,7 +19,7 @@ jobs:
 
     - name: Install license_finder
       shell: sh
-      run: gem install license_finder --version 7.1.0
+      run: gem install license_finder --version 7.2.1
 
     - name: Check licenses
       shell: sh
